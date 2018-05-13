@@ -1,0 +1,68 @@
+2018-03-12 22:55:50,766 [steps/nnet3/train_dnn.py:35 - <module> - INFO ] Starting DNN trainer (train_dnn.py)
+steps/nnet3/train_dnn.py --stage=26 --cmd=run.pl --mem 4G --feat.cmvn-opts=--norm-means=false --norm-vars=false --trainer.num-epochs 2 --trainer.optimization.num-jobs-initial 3 --trainer.optimization.num-jobs-final 9 --trainer.optimization.initial-effective-lrate 0.0017 --trainer.optimization.final-effective-lrate 0.00017 --egs.dir exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/egs --feat.online-ivector-dir exp/nnet3/ivectors_cv_train_nz_sp --cleanup.preserve-model-interval 20 --use-gpu true --ali-dir exp/tri4_cv_train_nz_sp_ali --lang data/lang --feat-dir=data/cv_train_nz_mfcc_bnf_appended_sp --reporting.email= --dir exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5
+['steps/nnet3/train_dnn.py', '--stage=26', '--cmd=run.pl --mem 4G', '--feat.cmvn-opts=--norm-means=false --norm-vars=false', '--trainer.num-epochs', '2', '--trainer.optimization.num-jobs-initial', '3', '--trainer.optimization.num-jobs-final', '9', '--trainer.optimization.initial-effective-lrate', '0.0017', '--trainer.optimization.final-effective-lrate', '0.00017', '--egs.dir', 'exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/egs', '--feat.online-ivector-dir', 'exp/nnet3/ivectors_cv_train_nz_sp', '--cleanup.preserve-model-interval', '20', '--use-gpu', 'true', '--ali-dir', 'exp/tri4_cv_train_nz_sp_ali', '--lang', 'data/lang', '--feat-dir=data/cv_train_nz_mfcc_bnf_appended_sp', '--reporting.email=', '--dir', 'exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5']
+2018-03-12 22:55:50,810 [steps/nnet3/train_dnn.py:163 - train - INFO ] Arguments for the experiment
+{'ali_dir': 'exp/tri4_cv_train_nz_sp_ali',
+ 'backstitch_training_interval': 1,
+ 'backstitch_training_scale': 0.0,
+ 'cleanup': True,
+ 'cmvn_opts': '--norm-means=false --norm-vars=false',
+ 'combine_sum_to_one_penalty': 0.0,
+ 'command': 'run.pl --mem 4G',
+ 'compute_per_dim_accuracy': False,
+ 'dir': 'exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5',
+ 'do_final_combination': True,
+ 'dropout_schedule': None,
+ 'egs_command': None,
+ 'egs_dir': 'exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/egs',
+ 'egs_opts': None,
+ 'egs_stage': 0,
+ 'email': None,
+ 'exit_stage': None,
+ 'feat_dir': 'data/cv_train_nz_mfcc_bnf_appended_sp',
+ 'final_effective_lrate': 0.00017,
+ 'frames_per_eg': 8,
+ 'initial_effective_lrate': 0.0017,
+ 'lang': 'data/lang',
+ 'max_lda_jobs': 10,
+ 'max_models_combine': 20,
+ 'max_param_change': 2.0,
+ 'minibatch_size': '512',
+ 'momentum': 0.0,
+ 'num_epochs': 2.0,
+ 'num_jobs_compute_prior': 10,
+ 'num_jobs_final': 9,
+ 'num_jobs_initial': 3,
+ 'online_ivector_dir': 'exp/nnet3/ivectors_cv_train_nz_sp',
+ 'preserve_model_interval': 20,
+ 'presoftmax_prior_scale_power': -0.25,
+ 'prior_subset_size': 20000,
+ 'proportional_shrink': 0.0,
+ 'rand_prune': 4.0,
+ 'remove_egs': True,
+ 'reporting_interval': 0.1,
+ 'samples_per_iter': 400000,
+ 'shuffle_buffer_size': 5000,
+ 'srand': 0,
+ 'stage': 26,
+ 'transform_dir': 'exp/tri4_cv_train_nz_sp_ali',
+ 'use_gpu': True}
+2018-03-12 22:55:51,468 [steps/nnet3/train_dnn.py:296 - train - INFO ] Training will run for 2.0 epochs = 32 iterations
+2018-03-12 22:55:51,469 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 26)
+2018-03-12 22:55:51,517 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 26, learning rate is 0.00253730246686.
+2018-03-12 23:04:43,254 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 27)
+2018-03-12 23:04:43,261 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 27, learning rate is 0.00230518388589.
+2018-03-12 23:10:47,510 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 28)
+2018-03-12 23:10:47,517 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 28, learning rate is 0.00209430007544.
+2018-03-12 23:16:45,477 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 29)
+2018-03-12 23:16:45,482 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 29, learning rate is 0.00190270842723.
+2018-03-12 23:22:33,485 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 30)
+2018-03-12 23:22:33,508 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 30, learning rate is 0.00194472455341.
+2018-03-12 23:30:17,721 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 31)
+2018-03-12 23:30:17,758 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 31, learning rate is 0.00153.
+2018-03-12 23:38:51,704 [steps/nnet3/train_dnn.py:362 - train - INFO ] Doing final combination to produce final.mdl
+2018-03-12 23:38:51,705 [steps/libs/nnet3/train/frame_level_objf/common.py:466 - combine_models - INFO ] Combining set([32, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]) models.
+2018-03-12 23:45:45,081 [steps/nnet3/train_dnn.py:371 - train - INFO ] Getting average posterior for purposes of adjusting the priors.
+2018-03-12 23:59:06,565 [steps/nnet3/train_dnn.py:382 - train - INFO ] Re-adjusting priors based on computed posteriors
+2018-03-12 23:59:08,220 [steps/nnet3/train_dnn.py:392 - train - INFO ] Cleaning up the experiment directory exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5
+exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5: num-iters=32 nj=3..9 num-params=22.7M dim=340+100->9054 combine=-1.12->-0.99 loglike:train/valid[20,31,combined]=(-1.25,-1.03,-1.00/-1.37,-1.26,-1.24) accuracy:train/valid[20,31,combined]=(0.65,0.70,0.703/0.62,0.64,0.64)

@@ -1,0 +1,73 @@
+steps/nnet3/make_bottleneck_features.sh --nj 20 --use-gpu true --ivector-dir exp/nnet3/ivectors_cv_test_onlyindian --cmd run.pl acc_btn.renorm data/cv_test_onlyindian_hires data/cv_test_onlyindian_bnf /exp/minali/accents_multitask_exp/nnet3/multitask_accent_4sharedlayers_300bnf_0.5_0.5 exp/make_bnf/cv_test_onlyindian exp/make_bnf
+steps/nnet3/make_bottleneck_features.sh: line 78: /exp/minali/accents_multitask_exp/nnet3/multitask_accent_4sharedlayers_300bnf_0.5_0.5/num_jobs: Permission denied
+steps/nnet3/make_bottleneck_features.sh: Generating bottleneck features using /exp/minali/accents_multitask_exp/nnet3/multitask_accent_4sharedlayers_300bnf_0.5_0.5/final.raw model as output of 
+    component-node with name acc_btn.renorm.
+steps/nnet3/make_bottleneck_features.sh: computing CMVN stats.
+steps/compute_cmvn_stats.sh data/cv_test_onlyindian_bnf
+Succeeded creating CMVN stats for cv_test_onlyindian_bnf
+steps/nnet3/make_bottleneck_features.sh: done making BNF feats.scp.
+steps/nnet3/make_bottleneck_features.sh --nj 20 --use-gpu true --ivector-dir exp/nnet3/ivectors_cv_dev_nz --cmd run.pl acc_btn.renorm data/cv_dev_nz_hires data/cv_dev_nz_bnf /exp/minali/accents_multitask_exp/nnet3/multitask_accent_4sharedlayers_300bnf_0.5_0.5 exp/make_bnf/cv_dev_nz exp/make_bnf
+steps/nnet3/make_bottleneck_features.sh: line 78: /exp/minali/accents_multitask_exp/nnet3/multitask_accent_4sharedlayers_300bnf_0.5_0.5/num_jobs: Permission denied
+steps/nnet3/make_bottleneck_features.sh: Generating bottleneck features using /exp/minali/accents_multitask_exp/nnet3/multitask_accent_4sharedlayers_300bnf_0.5_0.5/final.raw model as output of 
+    component-node with name acc_btn.renorm.
+steps/nnet3/make_bottleneck_features.sh: computing CMVN stats.
+steps/compute_cmvn_stats.sh data/cv_dev_nz_bnf
+Succeeded creating CMVN stats for cv_dev_nz_bnf
+steps/nnet3/make_bottleneck_features.sh: done making BNF feats.scp.
+steps/nnet3/make_bottleneck_features.sh --nj 20 --use-gpu true --ivector-dir exp/nnet3/ivectors_cv_test_onlynz --cmd run.pl acc_btn.renorm data/cv_test_onlynz_hires data/cv_test_onlynz_bnf /exp/minali/accents_multitask_exp/nnet3/multitask_accent_4sharedlayers_300bnf_0.5_0.5 exp/make_bnf/cv_test_onlynz exp/make_bnf
+steps/nnet3/make_bottleneck_features.sh: line 78: /exp/minali/accents_multitask_exp/nnet3/multitask_accent_4sharedlayers_300bnf_0.5_0.5/num_jobs: Permission denied
+steps/nnet3/make_bottleneck_features.sh: Generating bottleneck features using /exp/minali/accents_multitask_exp/nnet3/multitask_accent_4sharedlayers_300bnf_0.5_0.5/final.raw model as output of 
+    component-node with name acc_btn.renorm.
+steps/nnet3/make_bottleneck_features.sh: computing CMVN stats.
+steps/compute_cmvn_stats.sh data/cv_test_onlynz_bnf
+Succeeded creating CMVN stats for cv_test_onlynz_bnf
+steps/nnet3/make_bottleneck_features.sh: done making BNF feats.scp.
+steps/append_feats.sh --cmd run.pl --nj 20 data/cv_test_onlyindian_bnf data/cv_test_onlyindian_hires data/cv_test_onlyindian_mfcc_bnf_appended exp/append_hires_mfcc_bnf/cv_test_onlyindian exp/append_mfcc_bnf
+Succeeded pasting features for cv_test_onlyindian_mfcc_bnf_appended into data/cv_test_onlyindian_mfcc_bnf_appended
+steps/compute_cmvn_stats.sh data/cv_test_onlyindian_mfcc_bnf_appended exp/make_cmvn_mfcc_bnf exp/append_mfcc_bnf
+Succeeded creating CMVN stats for cv_test_onlyindian_mfcc_bnf_appended
+steps/append_feats.sh --cmd run.pl --nj 20 data/cv_dev_nz_bnf data/cv_dev_nz_hires data/cv_dev_nz_mfcc_bnf_appended exp/append_hires_mfcc_bnf/cv_dev_nz exp/append_mfcc_bnf
+Succeeded pasting features for cv_dev_nz_mfcc_bnf_appended into data/cv_dev_nz_mfcc_bnf_appended
+steps/compute_cmvn_stats.sh data/cv_dev_nz_mfcc_bnf_appended exp/make_cmvn_mfcc_bnf exp/append_mfcc_bnf
+Succeeded creating CMVN stats for cv_dev_nz_mfcc_bnf_appended
+steps/append_feats.sh --cmd run.pl --nj 20 data/cv_test_onlynz_bnf data/cv_test_onlynz_hires data/cv_test_onlynz_mfcc_bnf_appended exp/append_hires_mfcc_bnf/cv_test_onlynz exp/append_mfcc_bnf
+Succeeded pasting features for cv_test_onlynz_mfcc_bnf_appended into data/cv_test_onlynz_mfcc_bnf_appended
+steps/compute_cmvn_stats.sh data/cv_test_onlynz_mfcc_bnf_appended exp/make_cmvn_mfcc_bnf exp/append_mfcc_bnf
+Succeeded creating CMVN stats for cv_test_onlynz_mfcc_bnf_appended
+steps/nnet3/decode.sh --nj 20 --cmd run.pl --mem 4G --online-ivector-dir exp/nnet3/ivectors_cv_test_onlyindian exp/tri4/graph_sw1_tg data/cv_test_onlyindian_mfcc_bnf_appended exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlyindian_mfcc_bnf_appended
+steps/nnet3/decode.sh: feature type is raw
+steps/diagnostic/analyze_lats.sh --cmd run.pl --mem 4G --iter final exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlyindian_mfcc_bnf_appended
+analyze_phone_length_stats.py: WARNING: optional-silence sil is seen only 76.404494382% of the time at utterance end.  This may not be optimal.
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlyindian_mfcc_bnf_appended/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(3,15,88) and mean=34.8
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlyindian_mfcc_bnf_appended/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl --mem 4G data/cv_test_onlyindian_mfcc_bnf_appended exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlyindian_mfcc_bnf_appended
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/nnet3/decode.sh --nj 20 --cmd run.pl --mem 4G --online-ivector-dir exp/nnet3/ivectors_cv_dev_nz exp/tri4/graph_sw1_tg data/cv_dev_nz_mfcc_bnf_appended exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_dev_nz_mfcc_bnf_appended
+steps/nnet3/decode.sh: feature type is raw
+steps/diagnostic/analyze_lats.sh --cmd run.pl --mem 4G --iter final exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_dev_nz_mfcc_bnf_appended
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_dev_nz_mfcc_bnf_appended/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(1,4,25) and mean=10.5
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_dev_nz_mfcc_bnf_appended/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl --mem 4G data/cv_dev_nz_mfcc_bnf_appended exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_dev_nz_mfcc_bnf_appended
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/nnet3/decode.sh --nj 20 --cmd run.pl --mem 4G --online-ivector-dir exp/nnet3/ivectors_cv_test_onlynz exp/tri4/graph_sw1_tg data/cv_test_onlynz_mfcc_bnf_appended exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlynz_mfcc_bnf_appended
+steps/nnet3/decode.sh: feature type is raw
+steps/diagnostic/analyze_lats.sh --cmd run.pl --mem 4G --iter final exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlynz_mfcc_bnf_appended
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlynz_mfcc_bnf_appended/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(1,5,27) and mean=11.2
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlynz_mfcc_bnf_appended/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl --mem 4G data/cv_test_onlynz_mfcc_bnf_appended exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlynz_mfcc_bnf_appended
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+%WER 21.20 [ 2202 / 10386, 290 ins, 332 del, 1580 sub ] exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_dev_nz_mfcc_bnf_appended/wer_10_1.0
+%WER 53.14 [ 432 / 813, 35 ins, 104 del, 293 sub ] exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlyindian_mfcc_bnf_appended/wer_16_1.0
+%WER 24.17 [ 1230 / 5089, 154 ins, 132 del, 944 sub ] exp/nnet3/tdnn_bnf300_4sharedlayers_300bnf_0.5_0.5/decode_cv_test_onlynz_mfcc_bnf_appended/wer_10_1.0

@@ -1,0 +1,145 @@
+2018-03-16 02:28:16,712 [steps/nnet3/train_dnn.py:35 - <module> - INFO ] Starting DNN trainer (train_dnn.py)
+steps/nnet3/train_dnn.py --stage=24 --cmd=run.pl --mem 4G --feat.cmvn-opts=--norm-means=false --norm-vars=false --trainer.num-epochs 2 --trainer.optimization.num-jobs-initial 3 --trainer.optimization.num-jobs-final 9 --trainer.optimization.initial-effective-lrate 0.0017 --trainer.optimization.final-effective-lrate 0.00017 --egs.dir exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/egs --feat.online-ivector-dir exp/nnet3/ivectors_cv_train_nz_sp --cleanup.preserve-model-interval 20 --use-gpu true --ali-dir exp/tri4_cv_train_nz_sp_ali --lang data/lang --feat-dir=data/cv_train_nz_mfcc_bnf_appended_sp --reporting.email= --dir exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3
+['steps/nnet3/train_dnn.py', '--stage=24', '--cmd=run.pl --mem 4G', '--feat.cmvn-opts=--norm-means=false --norm-vars=false', '--trainer.num-epochs', '2', '--trainer.optimization.num-jobs-initial', '3', '--trainer.optimization.num-jobs-final', '9', '--trainer.optimization.initial-effective-lrate', '0.0017', '--trainer.optimization.final-effective-lrate', '0.00017', '--egs.dir', 'exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/egs', '--feat.online-ivector-dir', 'exp/nnet3/ivectors_cv_train_nz_sp', '--cleanup.preserve-model-interval', '20', '--use-gpu', 'true', '--ali-dir', 'exp/tri4_cv_train_nz_sp_ali', '--lang', 'data/lang', '--feat-dir=data/cv_train_nz_mfcc_bnf_appended_sp', '--reporting.email=', '--dir', 'exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3']
+2018-03-16 02:28:16,721 [steps/nnet3/train_dnn.py:163 - train - INFO ] Arguments for the experiment
+{'ali_dir': 'exp/tri4_cv_train_nz_sp_ali',
+ 'backstitch_training_interval': 1,
+ 'backstitch_training_scale': 0.0,
+ 'cleanup': True,
+ 'cmvn_opts': '--norm-means=false --norm-vars=false',
+ 'combine_sum_to_one_penalty': 0.0,
+ 'command': 'run.pl --mem 4G',
+ 'compute_per_dim_accuracy': False,
+ 'dir': 'exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3',
+ 'do_final_combination': True,
+ 'dropout_schedule': None,
+ 'egs_command': None,
+ 'egs_dir': 'exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/egs',
+ 'egs_opts': None,
+ 'egs_stage': 0,
+ 'email': None,
+ 'exit_stage': None,
+ 'feat_dir': 'data/cv_train_nz_mfcc_bnf_appended_sp',
+ 'final_effective_lrate': 0.00017,
+ 'frames_per_eg': 8,
+ 'initial_effective_lrate': 0.0017,
+ 'lang': 'data/lang',
+ 'max_lda_jobs': 10,
+ 'max_models_combine': 20,
+ 'max_param_change': 2.0,
+ 'minibatch_size': '512',
+ 'momentum': 0.0,
+ 'num_epochs': 2.0,
+ 'num_jobs_compute_prior': 10,
+ 'num_jobs_final': 9,
+ 'num_jobs_initial': 3,
+ 'online_ivector_dir': 'exp/nnet3/ivectors_cv_train_nz_sp',
+ 'preserve_model_interval': 20,
+ 'presoftmax_prior_scale_power': -0.25,
+ 'prior_subset_size': 20000,
+ 'proportional_shrink': 0.0,
+ 'rand_prune': 4.0,
+ 'remove_egs': True,
+ 'reporting_interval': 0.1,
+ 'samples_per_iter': 400000,
+ 'shuffle_buffer_size': 5000,
+ 'srand': 0,
+ 'stage': 24,
+ 'transform_dir': 'exp/tri4_cv_train_nz_sp_ali',
+ 'use_gpu': True}
+2018-03-16 02:28:16,828 [steps/nnet3/train_dnn.py:296 - train - INFO ] Training will run for 2.0 epochs = 32 iterations
+2018-03-16 02:28:16,829 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 24)
+2018-03-16 02:28:16,834 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 24, learning rate is 0.00307401211691.
+2018-03-16 02:33:42,331 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 25)
+2018-03-16 02:33:42,339 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 25, learning rate is 0.00279279403598.
+2018-03-16 02:39:05,299 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 26)
+2018-03-16 02:39:05,317 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 26, learning rate is 0.00253730246686.
+2018-03-16 02:44:37,313 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 27)
+2018-03-16 02:44:37,321 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 27, learning rate is 0.00230518388589.
+2018-03-16 02:50:05,559 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 28)
+2018-03-16 02:50:05,565 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 28, learning rate is 0.00209430007544.
+2018-03-16 02:55:26,963 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 29)
+2018-03-16 02:55:26,972 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 29, learning rate is 0.00190270842723.
+2018-03-16 03:00:59,480 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 30)
+2018-03-16 03:00:59,488 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 30, learning rate is 0.00194472455341.
+2018-03-16 03:07:03,081 [steps/libs/nnet3/train/frame_level_objf/common.py:201 - train_one_iteration - INFO ] Training neural net (pass 31)
+2018-03-16 03:07:03,088 [steps/libs/nnet3/train/frame_level_objf/common.py:265 - train_one_iteration - INFO ] On iteration 31, learning rate is 0.00153.
+2018-03-16 03:12:59,512 [steps/nnet3/train_dnn.py:362 - train - INFO ] Doing final combination to produce final.mdl
+2018-03-16 03:12:59,512 [steps/libs/nnet3/train/frame_level_objf/common.py:466 - combine_models - INFO ] Combining set([32, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]) models.
+2018-03-16 03:22:39,476 [steps/nnet3/train_dnn.py:371 - train - INFO ] Getting average posterior for purposes of adjusting the priors.
+2018-03-16 03:26:28,219 [steps/nnet3/train_dnn.py:382 - train - INFO ] Re-adjusting priors based on computed posteriors
+2018-03-16 03:26:28,737 [steps/nnet3/train_dnn.py:392 - train - INFO ] Cleaning up the experiment directory exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3
+exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3: num-iters=32 nj=3..9 num-params=22.7M dim=340+100->9054 combine=-1.11->-0.98 loglike:train/valid[20,31,combined]=(-1.25,-1.03,-1.00/-1.38,-1.26,-1.24) accuracy:train/valid[20,31,combined]=(0.65,0.70,0.707/0.62,0.64,0.64)
+steps/nnet3/make_bottleneck_features.sh --nj 20 --use-gpu true --ivector-dir exp/nnet3/ivectors_cv_test_onlyindian --cmd run.pl acc_btn.renorm data/cv_test_onlyindian_hires data/cv_test_onlyindian_bnf /exp/minali/accents_multitask_exp/nnet3/multitask_correct_bignn_0.7_0.3 exp/make_bnf/cv_test_onlyindian exp/make_bnf
+steps/nnet3/make_bottleneck_features.sh: line 78: /exp/minali/accents_multitask_exp/nnet3/multitask_correct_bignn_0.7_0.3/num_jobs: Permission denied
+steps/nnet3/make_bottleneck_features.sh: Generating bottleneck features using /exp/minali/accents_multitask_exp/nnet3/multitask_correct_bignn_0.7_0.3/final.raw model as output of 
+    component-node with name acc_btn.renorm.
+steps/nnet3/make_bottleneck_features.sh: computing CMVN stats.
+steps/compute_cmvn_stats.sh data/cv_test_onlyindian_bnf
+Succeeded creating CMVN stats for cv_test_onlyindian_bnf
+steps/nnet3/make_bottleneck_features.sh: done making BNF feats.scp.
+steps/nnet3/make_bottleneck_features.sh --nj 20 --use-gpu true --ivector-dir exp/nnet3/ivectors_cv_dev_nz --cmd run.pl acc_btn.renorm data/cv_dev_nz_hires data/cv_dev_nz_bnf /exp/minali/accents_multitask_exp/nnet3/multitask_correct_bignn_0.7_0.3 exp/make_bnf/cv_dev_nz exp/make_bnf
+steps/nnet3/make_bottleneck_features.sh: line 78: /exp/minali/accents_multitask_exp/nnet3/multitask_correct_bignn_0.7_0.3/num_jobs: Permission denied
+steps/nnet3/make_bottleneck_features.sh: Generating bottleneck features using /exp/minali/accents_multitask_exp/nnet3/multitask_correct_bignn_0.7_0.3/final.raw model as output of 
+    component-node with name acc_btn.renorm.
+steps/nnet3/make_bottleneck_features.sh: computing CMVN stats.
+steps/compute_cmvn_stats.sh data/cv_dev_nz_bnf
+Succeeded creating CMVN stats for cv_dev_nz_bnf
+steps/nnet3/make_bottleneck_features.sh: done making BNF feats.scp.
+steps/nnet3/make_bottleneck_features.sh --nj 20 --use-gpu true --ivector-dir exp/nnet3/ivectors_cv_test_onlynz --cmd run.pl acc_btn.renorm data/cv_test_onlynz_hires data/cv_test_onlynz_bnf /exp/minali/accents_multitask_exp/nnet3/multitask_correct_bignn_0.7_0.3 exp/make_bnf/cv_test_onlynz exp/make_bnf
+steps/nnet3/make_bottleneck_features.sh: line 78: /exp/minali/accents_multitask_exp/nnet3/multitask_correct_bignn_0.7_0.3/num_jobs: Permission denied
+steps/nnet3/make_bottleneck_features.sh: Generating bottleneck features using /exp/minali/accents_multitask_exp/nnet3/multitask_correct_bignn_0.7_0.3/final.raw model as output of 
+    component-node with name acc_btn.renorm.
+steps/nnet3/make_bottleneck_features.sh: computing CMVN stats.
+steps/compute_cmvn_stats.sh data/cv_test_onlynz_bnf
+Succeeded creating CMVN stats for cv_test_onlynz_bnf
+steps/nnet3/make_bottleneck_features.sh: done making BNF feats.scp.
+steps/append_feats.sh --cmd run.pl --nj 20 data/cv_test_onlyindian_bnf data/cv_test_onlyindian_hires data/cv_test_onlyindian_mfcc_bnf_appended exp/append_hires_mfcc_bnf/cv_test_onlyindian exp/append_mfcc_bnf
+Succeeded pasting features for cv_test_onlyindian_mfcc_bnf_appended into data/cv_test_onlyindian_mfcc_bnf_appended
+steps/compute_cmvn_stats.sh data/cv_test_onlyindian_mfcc_bnf_appended exp/make_cmvn_mfcc_bnf exp/append_mfcc_bnf
+Succeeded creating CMVN stats for cv_test_onlyindian_mfcc_bnf_appended
+steps/append_feats.sh --cmd run.pl --nj 20 data/cv_dev_nz_bnf data/cv_dev_nz_hires data/cv_dev_nz_mfcc_bnf_appended exp/append_hires_mfcc_bnf/cv_dev_nz exp/append_mfcc_bnf
+Succeeded pasting features for cv_dev_nz_mfcc_bnf_appended into data/cv_dev_nz_mfcc_bnf_appended
+steps/compute_cmvn_stats.sh data/cv_dev_nz_mfcc_bnf_appended exp/make_cmvn_mfcc_bnf exp/append_mfcc_bnf
+Succeeded creating CMVN stats for cv_dev_nz_mfcc_bnf_appended
+steps/append_feats.sh --cmd run.pl --nj 20 data/cv_test_onlynz_bnf data/cv_test_onlynz_hires data/cv_test_onlynz_mfcc_bnf_appended exp/append_hires_mfcc_bnf/cv_test_onlynz exp/append_mfcc_bnf
+Succeeded pasting features for cv_test_onlynz_mfcc_bnf_appended into data/cv_test_onlynz_mfcc_bnf_appended
+steps/compute_cmvn_stats.sh data/cv_test_onlynz_mfcc_bnf_appended exp/make_cmvn_mfcc_bnf exp/append_mfcc_bnf
+Succeeded creating CMVN stats for cv_test_onlynz_mfcc_bnf_appended
+steps/nnet3/decode.sh --nj 20 --cmd run.pl --mem 4G --online-ivector-dir exp/nnet3/ivectors_cv_test_onlyindian exp/tri4/graph_sw1_tg data/cv_test_onlyindian_mfcc_bnf_appended exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlyindian_mfcc_bnf_appended
+steps/nnet3/decode.sh: feature type is raw
+steps/diagnostic/analyze_lats.sh --cmd run.pl --mem 4G --iter final exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlyindian_mfcc_bnf_appended
+analyze_phone_length_stats.py: WARNING: optional-silence sil is seen only 75.2808988764% of the time at utterance end.  This may not be optimal.
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlyindian_mfcc_bnf_appended/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(2,17,90) and mean=34.3
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlyindian_mfcc_bnf_appended/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl --mem 4G data/cv_test_onlyindian_mfcc_bnf_appended exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlyindian_mfcc_bnf_appended
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/nnet3/decode.sh --nj 20 --cmd run.pl --mem 4G --online-ivector-dir exp/nnet3/ivectors_cv_dev_nz exp/tri4/graph_sw1_tg data/cv_dev_nz_mfcc_bnf_appended exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_dev_nz_mfcc_bnf_appended
+steps/nnet3/decode.sh: feature type is raw
+steps/diagnostic/analyze_lats.sh --cmd run.pl --mem 4G --iter final exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_dev_nz_mfcc_bnf_appended
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_dev_nz_mfcc_bnf_appended/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(1,4,25) and mean=10.6
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_dev_nz_mfcc_bnf_appended/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl --mem 4G data/cv_dev_nz_mfcc_bnf_appended exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_dev_nz_mfcc_bnf_appended
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+steps/nnet3/decode.sh --nj 20 --cmd run.pl --mem 4G --online-ivector-dir exp/nnet3/ivectors_cv_test_onlynz exp/tri4/graph_sw1_tg data/cv_test_onlynz_mfcc_bnf_appended exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlynz_mfcc_bnf_appended
+steps/nnet3/decode.sh: feature type is raw
+steps/diagnostic/analyze_lats.sh --cmd run.pl --mem 4G --iter final exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlynz_mfcc_bnf_appended
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlynz_mfcc_bnf_appended/log/analyze_alignments.log
+Overall, lattice depth (10,50,90-percentile)=(1,5,27) and mean=11.4
+steps/diagnostic/analyze_lats.sh: see stats in exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlynz_mfcc_bnf_appended/log/analyze_lattice_depth_stats.log
+score best paths
+local/score.sh --iter final --cmd run.pl --mem 4G data/cv_test_onlynz_mfcc_bnf_appended exp/tri4/graph_sw1_tg exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlynz_mfcc_bnf_appended
+local/score.sh: scoring with word insertion penalty=0.0,0.5,1.0
+score confidence and timing with sclite
+Decoding done.
+%WER 20.85 [ 2165 / 10386, 253 ins, 356 del, 1556 sub ] exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_dev_nz_mfcc_bnf_appended/wer_11_1.0
+%WER 54.00 [ 439 / 813, 37 ins, 103 del, 299 sub ] exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlyindian_mfcc_bnf_appended/wer_14_1.0
+%WER 24.41 [ 1242 / 5089, 122 ins, 162 del, 958 sub ] exp/nnet3/tdnn_bnf300_appended_multitask_correct_bignn_0.7_0.3/decode_cv_test_onlynz_mfcc_bnf_appended/wer_14_0.5

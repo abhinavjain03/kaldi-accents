@@ -1,0 +1,12 @@
+lattice-scale --inv-acoustic-scale=9 "ark:gunzip -c exp/nnet3_combined/multitask_acc300btn_tdnn1024_10shrink_0.5_0.5_withcontext/101-recog-min/decode_cv_dev_nz/lat.*.gz|" ark:- | lattice-add-penalty --word-ins-penalty=0.0 ark:- ark:- | lattice-best-path --word-symbol-table=/home/abhinav/kaldi/accents/exp/tri4/graph_sw1_tg/words.txt ark:- ark,t:- | utils/int2sym.pl -f 2- /home/abhinav/kaldi/accents/exp/tri4/graph_sw1_tg/words.txt | local/wer_hyp_filter > exp/nnet3_combined/multitask_acc300btn_tdnn1024_10shrink_0.5_0.5_withcontext/101-recog-min/decode_cv_dev_nz/scoring_kaldi/penalty_0.0/9.txt 
+
+
+
+lattice-best-path --lm-scale=9 --word-symbol-table=/home/abhinav/kaldi/accents/exp/tri4/graph_sw1_tg/words.txt "ark:gunzip -c exp/nnet3_combined/multitask_acc300btn_tdnn1024_10shrink_0.5_0.5_withcontext/101-recog-min/decode_cv_dev_nz/lat.*.gz|" ark,t:exp/nnet3_combined/multitask_acc300btn_tdnn1024_10shrink_0.5_0.5_withcontext/101-recog-min/decode_cv_dev_nz/9.txt
+
+
+utils/int2sym.pl -f 2- /home/abhinav/kaldi/accents/exp/tri4/graph_sw1_tg/words.txt exp/nnet3_combined/multitask_acc300btn_tdnn1024_10shrink_0.5_0.5_withcontext/101-recog-min/decode_cv_dev_nz/9.txt > exp/nnet3_combined/multitask_acc300btn_tdnn1024_10shrink_0.5_0.5_withcontext/101-recog-min/decode_cv_dev_nz/9_sym.txt
+
+
+compute-wer --text --mode=present ark:text.filt ark:exp/nnet3_combined/multitask_acc300btn_tdnn1024_10shrink_0.5_0.5_withcontext/101-recog-min/decode_cv_dev_nz/9_sym.txt
+

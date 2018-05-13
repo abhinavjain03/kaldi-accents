@@ -1,0 +1,20 @@
+./run_with_accent_embedding.sh: calling get_egs.sh for generating examples with alignments as output
+steps/nnet3/get_egs.sh --cmvn-opts --norm-means=false --norm-vars=false --left-context 16 --right-context 12 --num-utts-subset 300 --nj 20 --samples-per-iter 50000 --cmd run.pl --frames-per-eg 8 data/cv_train_nz_mfcc_bnf_appended_sp exp/tri4_cv_train_nz_sp_ali exp/nnet3/tdnn_bnf300-appended/egs
+File data/cv_train_nz_mfcc_bnf_appended_sp/utt2uniq exists, so augmenting valid_uttlist to
+include all perturbed versions of the same 'real' utterances.
+steps/nnet3/get_egs.sh: feature type is raw
+steps/nnet3/get_egs.sh: working out number of frames of training data
+steps/nnet3/get_egs.sh: working out feature dim
+steps/nnet3/get_egs.sh: creating 6 archives, each with 42120 egs, with
+steps/nnet3/get_egs.sh:   8 labels per example, and (left,right) context = (16,12)
+steps/nnet3/get_egs.sh: copying data alignments
+copy-int-vector ark:- ark,scp:exp/nnet3/tdnn_bnf300-appended/egs/ali.ark,exp/nnet3/tdnn_bnf300-appended/egs/ali.scp 
+LOG (copy-int-vector[5.2.204~1-08848]:main():copy-int-vector.cc:83) Copied 92660 vectors of int32.
+steps/nnet3/get_egs.sh: Getting validation and training subset examples.
+steps/nnet3/get_egs.sh: ... extracting validation and training-subset alignments.
+... Getting subsets of validation examples for diagnostics and combination.
+steps/nnet3/get_egs.sh: Generating training examples on disk
+steps/nnet3/get_egs.sh: recombining and shuffling order of archives on disk
+steps/nnet3/get_egs.sh: removing temporary archives
+steps/nnet3/get_egs.sh: removing temporary alignments and transforms
+steps/nnet3/get_egs.sh: Finished preparing training examples

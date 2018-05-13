@@ -1,0 +1,6 @@
+steps/nnet3/make_bottleneck_features.sh --nj 20 --use-gpu true --cmd run.pl tdnn_bn.renorm data/cv_train_nz_sp_hires data/cv_train_nz_sp_bnf /exp/abhinav/accent_recognizer_exp/nnet3/tdnn_1024nodes_300bnlayer_except_england_canada exp/make_bnf/cv_train_nz_sp exp/make_bnf
+steps/nnet3/make_bottleneck_features.sh: Generating bottleneck features using /exp/abhinav/accent_recognizer_exp/nnet3/tdnn_1024nodes_300bnlayer_except_england_canada/final.raw model as output of 
+    component-node with name tdnn_bn.renorm.
+run.pl: 3 / 20 failed, log is in exp/make_bnf/cv_train_nz_sp/make_bnf_cv_train_nz_sp_hires.*.log
+steps/append_feats.sh --cmd run.pl --nj 20 data/cv_train_nz_sp_bnf data/cv_train_nz_sp_hires data/cv_train_nz_mfcc_bnf_appended_sp exp/append_hires_mfcc_bnf/cv_train_nz_sp exp/append_mfcc_bnf
+run.pl: 3 / 20 failed, log is in exp/append_hires_mfcc_bnf/cv_train_nz_sp/append.*.log

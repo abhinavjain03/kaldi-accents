@@ -1,0 +1,40 @@
+steps/nnet3/make_bottleneck_features.sh --nj 20 --use-gpu true --cmd run.pl tdnn_bn.renorm data/cv_train_nz_sp_hires data/cv_train_nz_sp_bnf /exp/abhinav/accent_recognizer_exp/nnet3/tdnn_1024nodes_300bnlayer_us_england exp/make_bnf/cv_train_nz_sp exp/make_bnf
+steps/nnet3/make_bottleneck_features.sh: Generating bottleneck features using /exp/abhinav/accent_recognizer_exp/nnet3/tdnn_1024nodes_300bnlayer_us_england/final.raw model as output of 
+    component-node with name tdnn_bn.renorm.
+steps/nnet3/make_bottleneck_features.sh: computing CMVN stats.
+steps/compute_cmvn_stats.sh data/cv_train_nz_sp_bnf
+Succeeded creating CMVN stats for cv_train_nz_sp_bnf
+steps/nnet3/make_bottleneck_features.sh: done making BNF feats.scp.
+steps/append_feats.sh --cmd run.pl --nj 20 data/cv_train_nz_sp_bnf data/cv_train_nz_sp_hires data/cv_train_nz_mfcc_bnf_appended_sp exp/append_hires_mfcc_bnf/cv_train_nz_sp exp/append_mfcc_bnf
+Succeeded pasting features for cv_train_nz_mfcc_bnf_appended_sp into data/cv_train_nz_mfcc_bnf_appended_sp
+steps/compute_cmvn_stats.sh data/cv_train_nz_mfcc_bnf_appended_sp exp/make_cmvn_mfcc_bnf exp/append_mfcc_bnf
+Succeeded creating CMVN stats for cv_train_nz_mfcc_bnf_appended_sp
+feat-to-dim scp:data/cv_train_nz_mfcc_bnf_appended_sp/feats.scp - 
+steps/nnet3/xconfig_to_configs.py --xconfig-file exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs/network.xconfig --config-dir exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs/
+nnet3-init exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs//ref.config exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs//ref.raw 
+LOG (nnet3-init[5.2.204~1-08848]:main():nnet3-init.cc:80) Initialized raw neural net and wrote it to exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs//ref.raw
+nnet3-info exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs//ref.raw 
+nnet3-init exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs//ref.config exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs//ref.raw 
+LOG (nnet3-init[5.2.204~1-08848]:main():nnet3-init.cc:80) Initialized raw neural net and wrote it to exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs//ref.raw
+nnet3-info exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/configs//ref.raw 
+./run_with_accent_embedding_with_ivectors_1.sh: calling get_egs.sh for generating examples with alignments as output
+steps/nnet3/get_egs.sh --cmvn-opts --norm-means=false --norm-vars=false --online-ivector-dir exp/nnet3/ivectors_cv_train_nz_sp --left-context 16 --right-context 12 --num-utts-subset 300 --nj 20 --samples-per-iter 400000 --cmd run.pl --frames-per-eg 8 data/cv_train_nz_mfcc_bnf_appended_sp exp/tri4_cv_train_nz_sp_ali exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/egs
+File data/cv_train_nz_mfcc_bnf_appended_sp/utt2uniq exists, so augmenting valid_uttlist to
+include all perturbed versions of the same 'real' utterances.
+steps/nnet3/get_egs.sh: feature type is raw
+feat-to-dim scp:exp/nnet3/ivectors_cv_train_nz_sp/ivector_online.scp - 
+steps/nnet3/get_egs.sh: working out number of frames of training data
+steps/nnet3/get_egs.sh: working out feature dim
+steps/nnet3/get_egs.sh: creating 12 archives, each with 387321 egs, with
+steps/nnet3/get_egs.sh:   8 labels per example, and (left,right) context = (16,12)
+steps/nnet3/get_egs.sh: copying data alignments
+copy-int-vector ark:- ark,scp:exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/egs/ali.ark,exp/nnet3/tdnn_bnf300_appended_with_ivectors_us_england/egs/ali.scp 
+LOG (copy-int-vector[5.2.204~1-08848]:main():copy-int-vector.cc:83) Copied 92660 vectors of int32.
+steps/nnet3/get_egs.sh: Getting validation and training subset examples.
+steps/nnet3/get_egs.sh: ... extracting validation and training-subset alignments.
+... Getting subsets of validation examples for diagnostics and combination.
+steps/nnet3/get_egs.sh: Generating training examples on disk
+steps/nnet3/get_egs.sh: recombining and shuffling order of archives on disk
+steps/nnet3/get_egs.sh: removing temporary archives
+steps/nnet3/get_egs.sh: removing temporary alignments and transforms
+steps/nnet3/get_egs.sh: Finished preparing training examples
