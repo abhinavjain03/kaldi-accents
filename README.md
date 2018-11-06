@@ -23,7 +23,7 @@ This is the script [my_run.sh](./my_run.sh).
 5. TestIN - cv_test_onlyindian
 
 ## Steps
-Rest of the steps are pretty standard. We train a Speaker Adapted HMM Model *(tri4)* and will use the alignments generated from this model for further training in this as well as the multitask setup *refer to repo*.
+Rest of the steps are pretty standard. We train a Speaker Adapted HMM Model *(tri4)* and will use the alignments generated from this model for further training in this as well as the multitask setup [Accent Embeddings - Multitask](https://github.com/abhinavjain03/kaldi-accentsmultitask "AE - MTL").
 1. **MFCCS** - The script creates both standard and hires MFCCS of train, dev and test data provided the correct paths.
 2. **ivectors** - ivectors are used for speaker adaptation while training DNN Acoustic Models. The scripts for training an ivector extractor comes with kaldi.
 3. **alignments** - We use alignments generated from the tri4 model as target for training of the DNN Acoustic models.
