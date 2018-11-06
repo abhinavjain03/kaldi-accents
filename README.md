@@ -1,4 +1,4 @@
-# Accent Embeddings
+# Accent Embeddings - HMM & Baseline
 This repository store a part of the work done as mentioned in the paper submitted in Interspeech 2018.
 [Paper](https://www.isca-speech.org/archive/Interspeech_2018/abstracts/1864.html "IS1864")
 
@@ -32,3 +32,6 @@ Rest of the steps are pretty standard. We train a Speaker Adapted HMM Model *(tr
 **Note :** 
 1. This repository is a pre-requisite for further work [Accent Embeddings - Multitask](https://github.com/abhinavjain03/kaldi-accentsmultitask "AE - MTL") mentioned in the paper.
 2. [get_bnf_text.sh](./get_bnf_text.sh "get_bnf_text.sh") & [make_utterance_level_bnf.py](./make_utterance_level_bnf.py "make_utterance_level_bnf.py") are the scripts used for generating utterance level bnfs.
+
+
+This repo along with [Accent Classifier](https://github.com/abhinavjain03/kaldi-accentrecognizer "AccentClassifier") & [Accent Embeddings - Multitask](https://github.com/abhinavjain03/kaldi-accentsmultitask "AE - MTL") form the complete work mentioned in the [Paper](https://www.isca-speech.org/archive/Interspeech_2018/abstracts/1864.html "IS1864").
